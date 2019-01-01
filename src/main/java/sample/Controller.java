@@ -150,10 +150,10 @@ public class Controller implements Initializable {
             LoadDictionary.setDisable(false);
             ChooseResultPath.setDisable(false);
             //init the cities
-            HashMap<String, City> cities = reader.getCities();
+            //HashMap<String, City> cities = reader.getCities();
 //            Cities.getItems().addAll(citiesObservableList(cities));
 //            Cities.setDisable(false);
-            citiesCombo();
+           // citiesCombo();
 
             //init documents
             Documents = reader.getIndexer().getDocsHashMap();
@@ -668,18 +668,22 @@ public class Controller implements Initializable {
 
     private void citiesCombo() {
 
-        citiesList = new ArrayList<>();
-        for (String s : CitiesHashMap.keySet()) {
+        try{
+            citiesList = new ArrayList<>();
+            for (String s : CitiesHashMap.keySet()) {
 
-            citiesList.add(s);
-        }
+                citiesList.add(s);
+            }
 
-        ObservableList<String> citiesObserv = FXCollections.observableArrayList(citiesList);
-        for (String s1 : citiesObserv) {
-            CheckMenuItem x = new CheckMenuItem();
-            x.setText(s1);
-            menu.getItems().add(x);
-        }
+            ObservableList<String> citiesObserv = FXCollections.observableArrayList(citiesList);
+            for (String s1 : citiesObserv) {
+                CheckMenuItem x = new CheckMenuItem();
+                x.setText(s1);
+                menu.getItems().add(x);
+            }
+
+        }catch (Exception e){}
+
 
     }
 

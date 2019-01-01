@@ -317,7 +317,7 @@ public class Searcher {
             String[] numOfFileAndLineOfTerm = pointer.split(",");
             String fileNum = numOfFileAndLineOfTerm[0];
             String lineNum = numOfFileAndLineOfTerm[1];
-            Integer lineNumInt = Integer.parseInt(lineNum) - 1;
+            Integer lineNumInt = Integer.parseInt(lineNum)-1;
             String lineFromFile = "";
             try {
                 //doc:FBIS3-29#2=27066 ,27079 doc:FBIS3-5232#1=481 DF- 2 TIC- 3
